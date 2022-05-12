@@ -208,24 +208,45 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(
-                        height: 180,
-                        child: Image.asset(
-                          "assets/logo.png",
-                          fit: BoxFit.contain,
-                        )),
+                    FadeAnimation(
+                      1,
+                      SizedBox(
+                          height: 180,
+                          child: Image.asset(
+                            "assets/illustration.png",
+                            fit: BoxFit.contain,
+                          )),
+                    ),
                     SizedBox(height: 45),
-                    firstNameField,
+                    FadeAnimation(
+                      1.2,
+                      firstNameField,
+                    ),
                     SizedBox(height: 20),
-                    secondNameField,
+                    FadeAnimation(
+                      1.3,
+                      secondNameField,
+                    ),
                     SizedBox(height: 20),
-                    emailField,
+                    FadeAnimation(
+                      1.4,
+                      emailField,
+                    ),
                     SizedBox(height: 20),
-                    passwordField,
+                    FadeAnimation(
+                      1.5,
+                      passwordField,
+                    ),
                     SizedBox(height: 20),
-                    confirmPasswordField,
+                    FadeAnimation(
+                      1.6,
+                      confirmPasswordField,
+                    ),
                     SizedBox(height: 20),
-                    signUpButton,
+                    FadeAnimation(
+                      1.7,
+                      signUpButton,
+                    ),
                     SizedBox(height: 15),
                   ],
                 ),

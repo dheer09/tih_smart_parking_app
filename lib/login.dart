@@ -116,40 +116,54 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(
-                        height: 200,
-                        child: Image.asset(
-                          "assets/background.png",
-                          fit: BoxFit.contain,
-                        )),
+                    FadeAnimation(
+                      1,
+                      SizedBox(
+                          height: 200,
+                          child: Image.asset(
+                            "assets/background.png",
+                            fit: BoxFit.contain,
+                          )),
+                    ),
                     SizedBox(height: 45),
-                    emailField,
+                    FadeAnimation(
+                      1.2,
+                      emailField,
+                    ),
                     SizedBox(height: 25),
-                    passwordField,
+                    FadeAnimation(
+                      1.3,
+                      passwordField,
+                    ),
                     SizedBox(height: 35),
                     loginButton,
-                    SizedBox(height: 15),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text("Don't have an account? "),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          RegistrationScreen()));
-                            },
-                            child: Text(
-                              "SignUp",
-                              style: TextStyle(
-                                  color: Colors.redAccent,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15),
-                            ),
-                          )
-                        ])
+                    FadeAnimation(
+                      1.4,
+                      SizedBox(height: 15),
+                    ),
+                    FadeAnimation(
+                        1.5,
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text("Don't have an account? "),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              RegistrationScreen()));
+                                },
+                                child: Text(
+                                  "SignUp",
+                                  style: TextStyle(
+                                      color: Colors.redAccent,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
+                                ),
+                              )
+                            ])),
                   ],
                 ),
               ),
