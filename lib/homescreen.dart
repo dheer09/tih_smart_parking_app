@@ -2,7 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:smart_parking_app/model/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:smart_parking_app/googleMaps/user_current_location.dart';
 
+import 'googleMaps/custom_marker_info.dart';
+import 'googleMaps/google_places_api.dart';
 import 'login.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -73,6 +76,29 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: () {
                     logout(context);
                   }),
+                  FloatingActionButton(onPressed: (){
+
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const CustomMarkerInfoWindow()),
+                    );
+
+                  },
+                  tooltip: "Find",
+                  backgroundColor: Colors.green,
+                  child: const Icon(Icons.navigation),),
+                  Padding(padding: EdgeInsets.all(20.0)),
+                  FloatingActionButton(onPressed: (){
+
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const GooglePlacesApiScreen()),
+                    );
+
+                  },
+                  tooltip: "search",
+                  backgroundColor: Colors.green,
+                  child: const Icon(Icons.search)),
             ],
           ),
         ),
